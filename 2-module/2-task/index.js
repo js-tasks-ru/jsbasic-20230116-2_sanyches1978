@@ -4,7 +4,7 @@ function isEmpty(obj) {
   } 
   return true;*/
   
-  if( Object.keys(obj).length ) {
+  if( Object.keys(obj).length || Object.getOwnPropertySymbols(obj).length ) {
     return false;
   } else {
     return true;
