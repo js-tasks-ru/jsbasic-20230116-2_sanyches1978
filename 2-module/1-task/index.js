@@ -4,10 +4,13 @@ function sumSalary(salaries) {
   for( let key in salaries) {
     let elem = salaries[key];
 
-    if( typeof(elem) === 'number' 
+    if(
+      /*typeof(elem) === 'number' 
       && !isNaN(elem)
       && elem !== Infinity
-      && elem !== -Infinity
+      && elem !== -Infinity*/
+      typeof(elem) === 'number'
+      && isFinite(elem)
       ) {
       sum += elem;
     }
