@@ -15,5 +15,4 @@ function toggleText() {
   }
 
   button.addEventListener('click', toggle);
-  button.addEventListener('click', toggle);
-}
+  }
