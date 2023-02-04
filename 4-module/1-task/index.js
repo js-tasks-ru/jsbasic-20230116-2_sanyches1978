@@ -3,7 +3,8 @@ function makeFriendsList(friends) {
   
   for( let friend of friends ) {
     let li = document.createElement('li');
-    ul.insertAdjacentHTML('beforeend', `<li>${friend['firstName']} ${friend['lastName']}</li>`);
+    li.innerHTML = (`${friend['firstName']} ${friend['lastName']}`);
+    ul.append(li);
   }
   return ul;
 }
