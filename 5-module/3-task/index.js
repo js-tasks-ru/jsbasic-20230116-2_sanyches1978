@@ -14,7 +14,7 @@ function initCarousel() {
         carouselInner.style.transform = `translateX(-${slideWidth * counter}px)`;
         arrowLeft.style.display = '';
 
-       ( counter == slideList.length - 1 ) ? arrowRight.style.display = 'none': arrowRight.style.display = '';
+       if( counter == slideList.length - 1 ) arrowRight.style.display = 'none';
     }
 
     function slideSwitcherLeft() {
@@ -22,7 +22,7 @@ function initCarousel() {
         carouselInner.style.transform = `translateX(-${slideWidth * counter}px)`
         arrowRight.style.display = '';
 
-        ( counter == 0 ) ? arrowLeft.style.display = 'none': arrowLeft.style.display = '';
+        if( counter == 0 ) arrowLeft.style.display = 'none';
     }
   
     arrowRight.addEventListener('click', slideSwitcherRight);
