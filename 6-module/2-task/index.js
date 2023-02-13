@@ -8,14 +8,13 @@ export default class ProductCard {
     this.#product = product;
     this.#render();
     
-    let card = this.elem;
-    
     let button = this.elem.querySelector('.card__button');
     
-    button.addEventListener('click', function() {
-      card.dispatchEvent( new CustomEvent( "product-add", {
-        detail: product.id,
-        bubbles: true} ) )
+    button.addEventListener('click', () => {
+      this.elem.dispatchEvent( new CustomEvent('product-add', {
+       detail: this.#product.id,
+       bubbles: true 
+      }))
     });
   }
 
