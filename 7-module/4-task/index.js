@@ -16,8 +16,6 @@ export default class StepSlider {
     }
   }
 
-  
-
   #template() {
     let templateSteps = '<span class="slider-step slider__step-active"></span>';
 
@@ -81,13 +79,11 @@ export default class StepSlider {
 
   onMouseDown = (event) => {
     event.preventDefault();
-    //this.elem.classList.add('.slider_dragging');
     let value = 0;
     
     let onMouseMove = (event) => {
       this.elem.classList.add('slider_dragging');
-      console.log( this.elem );
-
+      
       let left = event.clientX - this.elem.getBoundingClientRect().left;
       let leftRelative = left / this.elem.offsetWidth;
       
@@ -98,8 +94,6 @@ export default class StepSlider {
       if (leftRelative > 1) {
         leftRelative = 1;
       }
-
-      console.log( leftRelative * 100 );
 
       let segments = this.steps - 1;
       let approximateValue = leftRelative * segments;
